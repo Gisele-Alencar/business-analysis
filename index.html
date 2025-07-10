@@ -4,17 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dados que Vendem</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
       background-color: #fff;
       color: #1e1e1e;
       line-height: 1.6;
+      padding-top: 0;
+    }
+
+    /* Hero Header com imagem de fundo */
+    .hero-header {
+      min-height: 280px;
+      background-image: url('https://i.imgur.com/DlMdfUw.jpg'); /* troque pelo link da sua imagem */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 1000;
+    }
+
+    /* Remove a imagem de perfil */
+    .profile-img {
+      display: none;
+    }
+
+    .profile-name {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+      color: #a64ce1;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
 
     h1, h2, h3, h4 {
-      font-weight: bold;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-top: 0.8em;
+      margin-bottom: 0.4em;
     }
 
     .section {
@@ -27,6 +67,7 @@
 
     .highlight-purple {
       color: #a64ce1;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
     }
 
     .box {
@@ -47,6 +88,7 @@
     .etapa h3 {
       margin-top: 0;
       color: #2a2a2a;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
     }
 
     .pricing {
@@ -72,6 +114,7 @@
       font-weight: bold;
       margin-top: 20px;
       text-decoration: none;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
 
     .text-center {
@@ -86,32 +129,17 @@
       margin-bottom: 10px;
     }
 
-    .step {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-
-    .step-number {
-      background-color: #ffaeb8;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
     a {
       color: #a64ce1;
     }
 
-    /* Etapa 4 - Inspirado no modelo da imagem */
     .etapa4 {
       background-color: #ffaeb8;
       border-radius: 12px;
       padding: 30px 20px;
       margin-bottom: 20px;
     }
+
     .etapa4 .etapa4-title {
       font-size: 2rem;
       color: #a64ce1;
@@ -119,50 +147,69 @@
       margin-bottom: 12px;
       margin-top: 0;
       letter-spacing: -1px;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
     }
+
     .etapa4 .etapa4-desc {
       color: #a64ce1;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 30px;
       line-height: 1.4;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
+
     .etapa4-block {
       margin-bottom: 32px;
     }
+
     .etapa4-block:last-child {
       margin-bottom: 0;
     }
+
     .etapa4-icon {
       font-size: 2rem;
       margin-bottom: 8px;
       display: inline-block;
       vertical-align: middle;
       color: #555;
-      /* Slightly dimmed icon color */
     }
+
     .etapa4-block-title {
       font-size: 1.25rem;
       font-weight: bold;
       margin: 0 0 6px 0;
-      font-family: 'Segoe UI', sans-serif;
       color: #111;
       letter-spacing: -0.5px;
+      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
     }
+
     .etapa4-block-desc {
-      margin: 0 0 0 0;
+      margin: 0;
       font-size: 1rem;
       color: #222;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
+
     @media (min-width: 600px) {
       .etapa4 {
-        padding: 40px 40px;
+        padding: 40px;
+      }
+      .hero-header {
+        padding-top: 90px;
+        padding-bottom: 70px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero Header atualizado -->
+  <div class="hero-header">
+    <div class="profile-name">Analise do seu Negócio</div>
+  </div>
+
+  <!-- Conteúdo original mantido -->
   <section class="section highlight">
     <h1 class="highlight-purple">Será que você tá perdendo dinheiro e nem percebeu?</h1>
     <p>Às vezes a gente acha que tá vendendo bem... Mas tem produto parado no estoque há semanas, ou cliente indo embora por um detalhe que você nem imagina.</p>
@@ -202,70 +249,53 @@
       </ul>
     </div>
 
-    <!-- Nova Etapa 4 visualmente igual à dos prints -->
     <div class="etapa4">
       <h3 class="etapa4-title">Etapa 4:</h3>
       <div class="etapa4-desc">
         Agora sim, se quiser um suporte personalizado e aprender a melhorar seu negócio, escolha o plano que mais se adequa à sua necessidade.
       </div>
+      <!-- Blocos da etapa 4 -->
       <div class="etapa4-block">
         <span class="etapa4-icon">💡</span>
         <div class="etapa4-block-title">Sugestões Práticas</div>
-        <div class="etapa4-block-desc">
-          Receba recomendações acionáveis com base nos dados que descobrimos sobre seu negócio.
-        </div>
+        <div class="etapa4-block-desc">Receba recomendações acionáveis com base nos dados que descobrimos sobre seu negócio.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">📋</span>
         <div class="etapa4-block-title">Mini Plano de Ação</div>
-        <div class="etapa4-block-desc">
-          Um guia simplificado para organizar eficientemente seu estoque e suas vendas.
-        </div>
+        <div class="etapa4-block-desc">Um guia simplificado para organizar eficientemente seu estoque e suas vendas.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">📱</span>
         <div class="etapa4-block-title">Acompanhamento por WhatsApp</div>
-        <div class="etapa4-block-desc">
-          Suporte e acompanhamento personalizado via WhatsApp por 20 dias ou 2 meses.
-        </div>
+        <div class="etapa4-block-desc">Suporte e acompanhamento personalizado via WhatsApp por 20 dias ou 2 meses.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">🎯</span>
         <div class="etapa4-block-title">Captação de Público</div>
-        <div class="etapa4-block-desc">
-          Métodos para identificar e captar o público certo para o crescimento do seu negócio.
-        </div>
+        <div class="etapa4-block-desc">Métodos para identificar e captar o público certo para o crescimento do seu negócio.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">📈</span>
         <div class="etapa4-block-title">Análise Simplificada</div>
-        <div class="etapa4-block-desc">
-          Ensino simples de como analisar seus próprios dados, sem ser um expert no assunto.
-        </div>
+        <div class="etapa4-block-desc">Ensino simples de como analisar seus próprios dados, sem ser um expert no assunto.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">📝</span>
         <div class="etapa4-block-title">Planilhas e Planejamento</div>
-        <div class="etapa4-block-desc">
-          Acesso a planilhas prontas ou planejadores de gestão para imprimir e usar imediatamente.
-        </div>
+        <div class="etapa4-block-desc">Acesso a planilhas prontas ou planejadores de gestão para imprimir e usar imediatamente.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">📑</span>
         <div class="etapa4-block-title">Relatórios Claros</div>
-        <div class="etapa4-block-desc">
-          Receba relatórios fáceis de entender, com gráficos e dicas valiosas de organização.
-        </div>
+        <div class="etapa4-block-desc">Receba relatórios fáceis de entender, com gráficos e dicas valiosas de organização.</div>
       </div>
       <div class="etapa4-block">
         <span class="etapa4-icon">🗂️</span>
         <div class="etapa4-block-title">Gestão Consciente</div>
-        <div class="etapa4-block-desc">
-          Você aprende a cuidar dos números do seu negócio com consciência e autonomia.
-        </div>
+        <div class="etapa4-block-desc">Você aprende a cuidar dos números do seu negócio com consciência e autonomia.</div>
       </div>
     </div>
-
   </section>
 
   <section class="section">
@@ -279,7 +309,6 @@
           <li>Modelos prontos e relatórios personalizados</li>
         </ul>
       </div>
-
       <div class="plan">
         <h3>💎 Plano Premium – R$ 120,00</h3>
         <ul>
@@ -291,14 +320,15 @@
       </div>
     </div>
   </section>
+
   <section class="section text-center">
-  <h2 class="highlight-purple">Vamos começar?</h2>
-  <p><strong>Lembrando que as 3 etapas são gratuitas!</strong></p>
-  <p>Não perca mais tempo tentando adivinhar o que está acontecendo com o seu negócio. Com a análise gratuita...</p>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoB-xV4KvZRsJttUM_JWi42npQHwUTkLtWKfWUc98hXOSVqQ/viewform" target="_blank" rel="noopener noreferrer">
-    Preencha o formulário agora
-  </a>
-</section>
+    <h2 class="highlight-purple">Vamos começar?</h2>
+    <p><strong>Lembrando que as 3 etapas são gratuitas!</strong></p>
+    <p>Não perca mais tempo tentando adivinhar o que está acontecendo com o seu negócio. Com a análise gratuita...</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoB-xV4KvZRsJttUM_JWi42npQHwUTkLtWKfWUc98hXOSVqQ/viewform" target="_blank" rel="noopener noreferrer">
+      Preencha o formulário agora
+    </a>
+  </section>
 
 </body>
-  </html>
+          </html>
