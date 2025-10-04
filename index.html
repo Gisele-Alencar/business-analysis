@@ -1,51 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AstroShield</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#1E1E1E] flex justify-center items-center min-h-screen">
-  
-  <!-- Container principal -->
-  <div class="w-[1200px] h-[700px] bg-gradient-to-b from-[#7d8ca4] to-[#c2c9d8] shadow-xl rounded-lg flex flex-col">
-    
-    <!-- HEADER -->
-    <header class="w-full h-[60px] bg-[#4c5d75] flex items-center justify-between px-6">
-      <!-- Menu -->
-      <nav class="flex gap-8 text-white font-semibold">
-        <a href="#" class="hover:underline">simulação</a>
-        <a href="#" class="hover:underline">sobre</a>
-        <a href="#" class="hover:underline">ajuda</a>
-      </nav>
-      <!-- Logo -->
-      <h1 class="text-white font-bold text-xl">ASTROSHIELD</h1>
-    </header>
+import { useState } from "react";
 
-    <!-- CORPO -->
-    <div class="flex flex-1">
-      
-      <!-- Sidebar esquerda -->
-      <aside class="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
-        <div class="h-[100px] bg-white/20 rounded"></div>
-        <div class="h-[100px] bg-white/20 rounded"></div>
-        <div class="h-[100px] bg-white/20 rounded"></div>
-      </aside>
+export default function App() {
+  const [activeTab, setActiveTab] = useState("simulação");
 
-      <!-- Conteúdo central -->
-      <main class="flex-1 flex justify-center items-center bg-[#d9d9d9]">
-        <div class="w-[500px] h-[400px] bg-gray-300 rounded shadow-inner"></div>
-      </main>
+  return (
+    <div className="bg-[#1E1E1E] flex justify-center items-center min-h-screen">
+      {/* Container principal */}
+      <div className="w-[1200px] h-[700px] bg-gradient-to-b from-[#7d8ca4] to-[#c2c9d8] shadow-xl rounded-lg flex flex-col">
+        
+        {/* HEADER */}
+        <header className="w-full h-[60px] bg-[#4c5d75] flex items-center justify-between px-6">
+          {/* Menu */}
+          <nav className="flex gap-8 text-white font-semibold">
+            {["simulação", "sobre", "ajuda"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`transition ${
+                  activeTab === tab ? "underline text-yellow-300" : "hover:underline"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
 
-      <!-- Sidebar direita -->
-      <aside class="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
-        <div class="h-[100px] bg-white/20 rounded"></div>
-        <div class="h-[100px] bg-white/20 rounded"></div>
-        <div class="h-[100px] bg-white/20 rounded"></div>
-      </aside>
+          {/* Logo */}
+          <h1 className="text-white font-bold text-xl">ASTROSHIELD</h1>
+        </header>
 
+        {/* CORPO */}
+        <div className="flex flex-1">
+          
+          {/* Sidebar esquerda */}
+          <aside className="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Controle 1
+            </div>
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Controle 2
+            </div>
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Controle 3
+            </div>
+          </aside>
+
+          {/* Conteúdo central dinâmico */}
+          <main className="flex-1 flex justify-center items-center bg-[#d9d9d9]">
+            <div className="w-[500px] h-[400px] bg-gray-300 rounded shadow-inner flex items-center justify-center text-lg font-bold">
+              {activeTab === "simulação" && "Simulação em andamento..."}
+              {activeTab === "sobre" && "Sobre o projeto AstroShield"}
+              {activeTab === "ajuda" && "Precisa de ajuda? Consulte o manual."}
+            </div>
+          </main>
+
+          {/* Sidebar direita */}
+          <aside className="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Info 1
+            </div>
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Info 2
+            </div>
+            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
+              Info 3
+            </div>
+          </aside>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+  );
+}
