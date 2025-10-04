@@ -1,362 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dados que Vendem</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:700,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background-color: #fff;
-      color: #1e1e1e;
-      line-height: 1.6;
-      padding-top: 0;
-    }
-
-    /* Hero Header com imagem de fundo */
-    .hero-header {
-      min-height: 80px;
-      background-image: url('https://i.postimg.cc/Yqvq7zBg/gabi-korea.jpg'); /* troque pelo link da sua imagem */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px 40px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* Remove a imagem de perfil */
-    .profile-img {
-      display: none;
-    }
-
-    .profile-name {
-      font-size: 2rem;
-      font-weight: 800;
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-      color: #a64ce1;
-      margin-bottom: 0;
-      margin-top: 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-top: 0.8em;
-      margin-bottom: 0.4em;
-    }
-
-    .section {
-      padding: 30px 20px;
-    }
-
-    .highlight {
-      background-color: #ffaeb8;
-    }
-
-    .highlight-purple {
-      color: #a64ce1;
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-    }
-
-    .box {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .etapa {
-      border: 2px solid #ffaeb8;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .etapa h3 {
-      margin-top: 0;
-      color: #2a2a2a;
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-    }
-
-    .pricing {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .plan {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #ff9ca5;
-      color: #000;
-      text-align: center;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-top: 20px;
-      text-decoration: none;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #a64ce1;
-    }
-
-    .etapa4 {
-      background-color: #ffaeb8;
-      border-radius: 12px;
-      padding: 30px 20px;
-      margin-bottom: 20px;
-    }
-
-    .etapa4 .etapa4-title {
-      font-size: 2rem;
-      color: #a64ce1;
-      font-weight: bold;
-      margin-bottom: 12px;
-      margin-top: 0;
-      letter-spacing: -1px;
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-    }
-
-    .etapa4 .etapa4-desc {
-      color: #a64ce1;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      line-height: 1.4;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-
-    .etapa4-block {
-      margin-bottom: 32px;
-    }
-
-    .etapa4-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .etapa4-icon {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      display: inline-block;
-      vertical-align: middle;
-      color: #555;
-    }
-
-    .etapa4-block-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin: 0 0 6px 0;
-      color: #111;
-      letter-spacing: -0.5px;
-      font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-    }
-
-    .etapa4-block-desc {
-      margin: 0;
-      font-size: 1rem;
-      color: #222;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-
-    @media (min-width: 600px) {
-      .etapa4 {
-        padding: 40px;
-      }
-      .hero-header {
-        padding-top: 90px;
-        padding-bottom: 70px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroShield</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-[#1E1E1E] flex justify-center items-center min-h-screen">
+  
+  <!-- Container principal -->
+  <div class="w-[1200px] h-[700px] bg-gradient-to-b from-[#7d8ca4] to-[#c2c9d8] shadow-xl rounded-lg flex flex-col">
+    
+    <!-- HEADER -->
+    <header class="w-full h-[60px] bg-[#4c5d75] flex items-center justify-between px-6">
+      <!-- Menu -->
+      <nav class="flex gap-8 text-white font-semibold">
+        <a href="#" class="hover:underline">simulação</a>
+        <a href="#" class="hover:underline">sobre</a>
+        <a href="#" class="hover:underline">ajuda</a>
+      </nav>
+      <!-- Logo -->
+      <h1 class="text-white font-bold text-xl">ASTROSHIELD</h1>
+    </header>
 
-  <!-- Hero Header atualizado -->
-  <div class="hero-header">
-    <div class="profile-name">  </div>
+    <!-- CORPO -->
+    <div class="flex flex-1">
+      
+      <!-- Sidebar esquerda -->
+      <aside class="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
+        <div class="h-[100px] bg-white/20 rounded"></div>
+        <div class="h-[100px] bg-white/20 rounded"></div>
+        <div class="h-[100px] bg-white/20 rounded"></div>
+      </aside>
+
+      <!-- Conteúdo central -->
+      <main class="flex-1 flex justify-center items-center bg-[#d9d9d9]">
+        <div class="w-[500px] h-[400px] bg-gray-300 rounded shadow-inner"></div>
+      </main>
+
+      <!-- Sidebar direita -->
+      <aside class="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
+        <div class="h-[100px] bg-white/20 rounded"></div>
+        <div class="h-[100px] bg-white/20 rounded"></div>
+        <div class="h-[100px] bg-white/20 rounded"></div>
+      </aside>
+
+    </div>
   </div>
-
-  <!-- Conteúdo original mantido -->
-  <section class="section highlight">
-    <h1 class="highlight-purple">Será que você tá perdendo dinheiro e nem percebeu?</h1>
-    <p>Às vezes a gente acha que tá vendendo bem… Mas tem produto parado lá no estoque faz semanas, ou cliente indo embora por um detalhe que você nem nota.   </p>
-    <h2 class="highlight-purple">Seus próprios dados mostram tudo isso e você nem precisa usar planilha complicada!</h2>
-  </section>
-<section class="section">
-<section class="section">
-  <p> Criei uma forma simples e objetiva de te mostrar o que está impulsionando as suas vendas e o que está bloqueando os resultados.
- </p>
-  <div style="background-color: #d9a4f2; color: #fff; padding: 16px; border-radius: 8px; margin: 20px 0; font-weight: bold; font-size: 1.1rem; text-align: center;">
-    E o melhor: As 3 primeiras etapas são 100% GRÁTIS 😍
-  </div>
-
-  <div style="display: flex; flex-direction: column; gap: 20px;">
-    <div style="display: flex; align-items: flex-start;">
-      <div style="background-color: #ffaeb8; color: #fff; font-weight: bold; border-radius: 8px; min-width: 40px; min-height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; flex-shrink: 0;">1</div>
-      <div>Você preenche o formulário</div>
-    </div>
-    <div style="display: flex; align-items: flex-start;">
-      <div style="background-color: #ffaeb8; color: #fff; font-weight: bold; border-radius: 8px; min-width: 40px; min-height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; flex-shrink: 0;">2</div>
-      <div>Eu analiso as informações</div>
-    </div>
-    <div style="display: flex; align-items: flex-start;">
-      <div style="background-color: #ffaeb8; color: #fff; font-weight: bold; border-radius: 8px; min-width: 40px; min-height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 12px; flex-shrink: 0;">3</div>
-      <div>E te envio um relatório onde está os erros e acertos do seu negócio</div>
-    </div>
-  </div>
-
-  <p style="margin-top: 20px; color: #a64ce1;">
-    Porque todo empreendedor merece entender o que tá acontecendo com o seu negócio antes de sair tentando “adivinhar”.
-  </p>
-</section>
-  <section class="section">
-    <h2 class="highlight-purple">Conheça as etapas a seguir:</h2>
-
-    <div class="etapa">
-      <h3>Etapa 1: Você preenche um formulário simples</h3>
-      <ul>
-        <li>📦 O que você vende?</li>
-        <li>🧍 Qual seu público?</li>
-        <li>📅 Quanto vende por dia, semana e mês?</li>
-        <li>🔗 Onde divulga sua loja?</li>
-      </ul>
-    </div>
-
-    <div class="etapa">
-      <h3>Etapa 2: Identificar os dados</h3>
-      <ul>
-        <li>📌 Quais produtos estão encalhados</li>
-        <li>👥 Quem é seu público mais ativo</li>
-        <li>🗓️ Quais dias e horários vendem mais</li>
-        <li>🔄 Se existe algum padrão repetido nas vendas</li>
-      </ul>
-    </div>
-
-    <div class="etapa">
-      <h3>Etapa 3: Você recebe uma análise objetiva e clara</h3>
-      <ul>
-        <li>🧊 Produto X tá parado há mais de 30 dias</li>
-        <li>💲 Seu ticket médio é de R$ 20</li>
-        <li>📅 Você vende mais nas sextas e sábados</li>
-        <li>🛍️ Kits vendem mais rápido que produtos individuais</li>
-      </ul>
-    </div>
-
-    <div class="etapa4">
-      <h3 class="etapa4-title">Etapa 4:</h3>
-      <div class="etapa4-desc">
-        Agora sim, se quiser um suporte personalizado e aprender a melhorar seu negócio, escolha o plano que mais se adequa à sua necessidade.
-      </div>
-      <!-- Blocos da etapa 4 -->
-      <div class="etapa4-block">
-        <span class="etapa4-icon">💡</span>
-        <div class="etapa4-block-title">Sugestões Práticas</div>
-        <div class="etapa4-block-desc">Receba recomendações acionáveis com base nos dados que descobrimos sobre seu negócio.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">📋</span>
-        <div class="etapa4-block-title">Mini Plano de Ação</div>
-        <div class="etapa4-block-desc">Um guia simplificado para organizar eficientemente seu estoque e suas vendas.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">📱</span>
-        <div class="etapa4-block-title">Acompanhamento por WhatsApp</div>
-        <div class="etapa4-block-desc">Suporte e acompanhamento personalizado via WhatsApp por 20 dias ou 2 meses.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">🎯</span>
-        <div class="etapa4-block-title">Captação de Público</div>
-        <div class="etapa4-block-desc">Métodos para identificar e captar o público certo para o crescimento do seu negócio.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">📈</span>
-        <div class="etapa4-block-title">Análise Simplificada</div>
-        <div class="etapa4-block-desc">Ensino simples de como analisar seus próprios dados, sem ser um expert no assunto.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">📝</span>
-        <div class="etapa4-block-title">Planilhas e Planejamento</div>
-        <div class="etapa4-block-desc">Acesso a planilhas prontas ou planejadores de gestão para imprimir e usar imediatamente.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">📑</span>
-        <div class="etapa4-block-title">Relatórios Claros</div>
-        <div class="etapa4-block-desc">Receba relatórios fáceis de entender, com gráficos e dicas valiosas de organização.</div>
-      </div>
-      <div class="etapa4-block">
-        <span class="etapa4-icon">🗂️</span>
-        <div class="etapa4-block-title">Gestão Consciente</div>
-        <div class="etapa4-block-desc">Você aprende a cuidar dos números do seu negócio com consciência e autonomia.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="highlight-purple">Orçamento</h2>
-    <div class="pricing">
-      <div class="plan">
-        <h3>💰 Plano Completo –
-          90,00 R$ </h3>
-        <ul>
-          <li>Tudo da etapa 4</li>
-          <li>Acompanhamento 20 dias</li>
-          <li>Modelos prontos e relatórios personalizados</li>
-        </ul>
-      </div>
-      <div class="plan">
-        <h3>💎 Plano Premium – 
-          120,00 R$ </h3>
-        <ul>
-          <li>Tudo da etapa 4</li>
-          <li>Acompanhamento durante 2 meses</li>
-          <li>Modelos prontos e relatórios personalizados</li>
-          <li>Revisões semanais e ajustes</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section text-center">
-    <h2 class="highlight-purple">Vamos começar?</h2>
-    <p><strong>Lembrando que as 3 etapas são gratuitas!</strong></p>
-    <p>Não perca mais tempo tentando adivinhar o que está acontecendo com o seu negócio! </p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfoB-xV4KvZRsJttUM_JWi42npQHwUTkLtWKfWUc98hXOSVqQ/viewform" target="_blank" rel="noopener noreferrer">
-      Preencha o formulário agora
-    </a>
-  </section>
-
 </body>
-          </html>
+</html>
