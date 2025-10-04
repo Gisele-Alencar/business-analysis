@@ -1,73 +1,149 @@
-import { useState } from "react";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AstroShield Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111827;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header, footer {
+      background: #1f2937;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ccc;
+    }
+    header nav a:hover {
+      color: #22c55e;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+    }
+    aside, .results {
+      width: 280px;
+      background: #1e1e2e;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .results { width: 320px; }
+    .center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      position: relative;
+    }
+    .planet {
+      width: 60%;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+    .card {
+      background: #2d2d3d;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #22c55e;
+      border: none;
+      color: white;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #16a34a;
+    }
+    footer {
+      font-size: 14px;
+    }
+    .progress {
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 8px;
+      margin: 5px 0;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #22c55e;
+      width: 59%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color:#22c55e;">AstroShield</h1>
+    <nav>
+      <a href="#">Simulação</a>
+      <a href="#">Defenda a Terra</a>
+      <a href="#">Sobre</a>
+      <a href="#">Ajuda</a>
+    </nav>
+    <div style="color:#22c55e;">● Online / NASA NEO</div>
+  </header>
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState("simulação");
+  <div class="main">
+    <aside>
+      <h2>Controle da Simulação</h2>
+      <div class="card">
+        <h3>Asteroide</h3>
+        <select style="width:100%;padding:5px;background:#333;color:white;">
+          <option>Apophis (2239)</option>
+          <option>Bennu (101955)</option>
+        </select>
+      </div>
+      <div class="card">
+        <h3>Mitigação</h3>
+        <input type="range" min="0" max="100" style="width:100%">
+        <button>Iniciar Simulação</button>
+      </div>
+    </aside>
 
-  return (
-    <div className="bg-[#1E1E1E] flex justify-center items-center min-h-screen">
-      {/* Container principal */}
-      <div className="w-[1200px] h-[700px] bg-gradient-to-b from-[#7d8ca4] to-[#c2c9d8] shadow-xl rounded-lg flex flex-col">
-        
-        {/* HEADER */}
-        <header className="w-full h-[60px] bg-[#4c5d75] flex items-center justify-between px-6">
-          {/* Menu */}
-          <nav className="flex gap-8 text-white font-semibold">
-            {["simulação", "sobre", "ajuda"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`transition ${
-                  activeTab === tab ? "underline text-yellow-300" : "hover:underline"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </nav>
+    <div class="center">
+      <img class="planet" src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Terra">
+    </div>
 
-          {/* Logo */}
-          <h1 className="text-white font-bold text-xl">ASTROSHIELD</h1>
-        </header>
+    <div class="results">
+      <h2>Resultado da Análise</h2>
+      <div class="card">
+        <p><b>Impacto Global:</b> 50,000 MT TNT</p>
+        <p><b>Cratera:</b> 12 km</p>
+        <p><b>Tsunami:</b> 1.3 milhões</p>
 
-        {/* CORPO */}
-        <div className="flex flex-1">
-          
-          {/* Sidebar esquerda */}
-          <aside className="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Controle 1
-            </div>
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Controle 2
-            </div>
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Controle 3
-            </div>
-          </aside>
-
-          {/* Conteúdo central dinâmico */}
-          <main className="flex-1 flex justify-center items-center bg-[#d9d9d9]">
-            <div className="w-[500px] h-[400px] bg-gray-300 rounded shadow-inner flex items-center justify-center text-lg font-bold">
-              {activeTab === "simulação" && "Simulação em andamento..."}
-              {activeTab === "sobre" && "Sobre o projeto AstroShield"}
-              {activeTab === "ajuda" && "Precisa de ajuda? Consulte o manual."}
-            </div>
-          </main>
-
-          {/* Sidebar direita */}
-          <aside className="w-[200px] bg-gradient-to-b from-[#c2c9d8] to-[#7d8ca4] p-4 flex flex-col justify-between">
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Info 1
-            </div>
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Info 2
-            </div>
-            <div className="h-[100px] bg-white/20 rounded flex items-center justify-center text-sm text-white">
-              Info 3
-            </div>
-          </aside>
-        </div>
+        <h3 style="color:#22c55e;">Impacto Evitado!</h3>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <p style="font-size:12px;color:#aaa;">Impacto Reduzido: 59%</p>
       </div>
     </div>
-  );
-}
+  </div>
+
+  <footer>
+    <div>
+      Missão: Impactor-2025<br>
+      <span style="color:#aaa;">Asteroide: GorgonX (2km)</span>
+    </div>
+    <div>
+      <span style="color:#22c55e;">Mensagem da NASA: Sucesso!</span><br>
+      <span style="color:#aaa;">Você salvou a Terra 🚀</span>
+    </div>
+  </footer>
+</body>
+</html>
